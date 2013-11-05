@@ -1,0 +1,57 @@
+<ul>
+  <li><%= factory.name %></li>
+  <li><%= factory.description %> </li>
+  <li><%= factory.location %> </li>
+  <li><%= factory.phone %> </li>
+</ul>
+
+<%fav = Favorite.find_by_user_id_and_factory_id(current_user.id, factory.id)%>
+<%if fav%>
+<!-- form for unfavoriting the factory -->
+  <form action="<%=user_favorite_url(current_user, fav.id)%>" method ="post">
+	<input type="hidden" name="_method" value="delete">
+    <input type="hidden" name="authenticity_token" id="<%=form_authenticity_token%>">
+    <input type="hidden" value ="<%=fav.id%>" name="id">
+  
+	<p><input type="submit" value="Un-Favorite!"></p>
+  </form>
+<% else %>
+<!-- form for favoriting the factory -->
+  <form action="<%=user_favorites_url(current_user)%>" method="post">
+    <input type="hidden" name="authenticity_token" id="<%=form_authenticity_token%>">
+    <input type="hidden" value ="<%=factory.id%>" name="favorite[factory_id]">
+    <input type="hidden" value ="<%=current_user.id%>" name="favorite[user_id]">
+  
+	<p><input type="submit" value="Favorite!"></p>
+  </form> 
+<% end %>
+
+<% note = Note.find_by_user_id_and_factory_id(current_user.id, factory.id)%>
+<%if note%>
+<!-- form for editing a note -->
+<form action="<%=user_notes_url(current_user)%>" method="post">
+  <input type="hidden" name="authenticity_token" id="<%=form_authenticity_token%>">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" value ="<%=factory.id%>" name="note[factory_id]">
+  <input type="hidden" value ="<%=current_user.id%>" name="note[user_id]">
+  <label for="note">Note</label><input type="textarea" 
+    value="<%note.content%>" name="note[content]" id="note">
+
+
+  <p><input type="submit" value="Edit Note"></p>
+</form> 
+<% else %>
+<!-- form for making a note -->
+  <form action="<%=user_notes_url(current_user)%>" method="post">
+    <input type="hidden" name="authenticity_token" id="<%=form_authenticity_token%>">
+    <input type="hidden" value ="<%=factory.id%>" name="note[factory_id]">
+    <input type="hidden" value ="<%=current_user.id%>" name="note[user_id]">
+	<label for="note">Note</label><input type="textarea" name="note[content]" id="note">
+	
+
+    <p><input type="submit" value="Make a Note"></p>
+  </form> 
+<% end %>
+
+
+
