@@ -3,4 +3,7 @@ class Factory < ActiveRecord::Base
   
   validates :phone, :name, :presence => true
   validates :name, :phone, :uniqueness => true
+  
+  has_many :favorites
+  has_many :notes
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131104023510) do
+ActiveRecord::Schema.define(:version => 20131105041845) do
 
   create_table "factories", :force => true do |t|
     t.string   "phone"
@@ -39,8 +39,12 @@ ActiveRecord::Schema.define(:version => 20131104023510) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.string   "encrypted_pass"
+    t.string   "session_token"
   end
+
+  add_index "users", ["session_token"], :name => "index_users_on_session_token", :unique => true
 
 end

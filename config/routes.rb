@@ -5,4 +5,5 @@ SourceAndSew::Application.routes.draw do
     resources :notes, :only => [:index, :edit, :update, :new, :create, :destroy]
   end
   
+  resource :session
 end

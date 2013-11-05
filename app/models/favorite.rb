@@ -3,5 +3,8 @@ class Favorite < ActiveRecord::Base
   
   validates :factory_id, :user_id, :presence => true
   
-  vvalidates_uniqueness_of :factory_id, :scope => [:user_id]
+  validates_uniqueness_of :factory_id, :scope => [:user_id]
+  
+  belongs_to :factory
+  belongs_to :user
 end
