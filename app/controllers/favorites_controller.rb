@@ -8,12 +8,11 @@ class FavoritesController < ApplicationController
   
   def create
     @favorite = Favorite.new(params[:favorite])
-    
     if @favorite.save
-      render factories
+      redirect_to factories_url
     else
       flash.now[:errors] = @favorite.errors.full_messages
-      redirect_to factories
+      redirect_to factories_url
     end
   end
   
