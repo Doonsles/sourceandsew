@@ -29,13 +29,13 @@
 <% note = Note.find_by_user_id_and_factory_id(current_user.id, factory.id)%>
 <%if note%>
 <!-- form for editing a note -->
-<form action="<%=user_notes_url(current_user)%>" method="post">
+<form action="<%=user_note_url(current_user, note)%>" method="post">
   <input type="hidden" name="authenticity_token" id="<%=form_authenticity_token%>">
   <input type="hidden" name="_method" value="put">
   <input type="hidden" value ="<%=factory.id%>" name="note[factory_id]">
   <input type="hidden" value ="<%=current_user.id%>" name="note[user_id]">
   <label for="note">Note</label><input type="textarea" 
-    value="<%note.content%>" name="note[content]" id="note">
+    value="<%=note.content%>" name="note[content]" id="note">
 
 
   <p><input type="submit" value="Edit Note"></p>

@@ -6,10 +6,15 @@ class NotesController < ApplicationController
     render :index
   end
   
-  def edit
-  end
-  
   def update
+    @note = Note.find(params[:id])
+    
+    if @note.update_attributes(params[:note])
+      redirect_to factories_url
+    else
+      flash.now[:errors] = @note.errors.full_messages
+      redirect_to factories_url
+    end
   end
   
   def create
