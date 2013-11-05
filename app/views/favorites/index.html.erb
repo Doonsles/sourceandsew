@@ -1,0 +1,11 @@
+<h1> Favorite Factories </h1>
+
+<%@favorites.each do |favorite|%>
+  <%factory = Factory.find(favorite.factory_id)%>
+  <ul>
+	  <li><%= factory.name %></li>
+	  <li><%= factory.description %> </li>
+	  <li><%= factory.location %> </li>
+	  <li><%= factory.phone %> </li>
+  </ul>
+<%end%>

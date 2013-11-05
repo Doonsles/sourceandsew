@@ -19,11 +19,6 @@ class User < ActiveRecord::Base
   end
   
   def is_password?(password)
-    puts "!!!!!!!!!!!"
-    puts "self is #{self}"
-    puts "self's name is #{self.username}"
-    puts "self's id is #{self.id}"
-    puts "self's encrypted pass is #{self.encrypted_pass}"
     BCrypt::Password.new(self.encrypted_pass).is_password?(password)
   end
   
