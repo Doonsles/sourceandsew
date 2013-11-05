@@ -28,5 +28,9 @@ class NotesController < ApplicationController
   end
   
   def destroy
+    @note = Note.find(params[:id])
+    
+    @note.destroy
+    redirect_to factories_url
   end
 end
