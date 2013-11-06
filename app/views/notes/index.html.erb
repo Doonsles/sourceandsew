@@ -1,9 +1,9 @@
-<h1> My Notes </h1>
+<h1> My Factory Notes </h1>
 
 <% @notes.each do |note| %>
   <ul>
     <% factory = Factory.find(note.factory_id)%>
-    <li> Note for <%=factory.name%> </li>
+    <li> <%=factory.name%> </li>
     <li> <%= render "layouts/edit_note" , factory: factory, note: note%> </li>
   </ul>
 <% end %>

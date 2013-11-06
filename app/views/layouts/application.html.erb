@@ -2,25 +2,37 @@
 <html>
 <head>
   <title>SourceAndSew</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= stylesheet_link_tag    "application", :media => "all", "data-turbolinks-track" => true%>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 </head>
 <body>
-	<% if current_user.nil? %>
-	<%= button_to "Sign In", new_session_url%>
+	<header class="navbar navbar-fixed-top navbar-inverse">
+	  <div class ="navbar-inner">
+		<div class = "container">
+		  <nav>
+		    <% if current_user.nil? %>
+	        <%= link_to "Sign In", new_session_url%>
 	
-	<% else %>
-	<ul>
-		<li> Welcome, <%= current_user.username %> </li>
-		<li><%= button_to "Sign Out", session_url, :method => :delete %> </li>
-		<li> <%= button_to "View Notes", user_notes_url(current_user), :method => :get%></li>
-		<li> <%= button_to "View Favorites", user_favorites_url(current_user), :method => :get %> </li>
-	</ul>
-	<% end %>
+	        <% else %>
+	          <ul class = "nav pull-right">
+		        <li> Welcome, <%= current_user.username %> </li>
+				<li> <%= link_to "View Favorites", user_favorites_url(current_user), :method => :get %> </li>
+		        <li> <%= link_to "View Notes", user_notes_url(current_user), :method => :get%></li>
+		        <li> <%= link_to "View All Factories", factories_url, :method => :get%></li>
+				<li><%= link_to "Sign Out", session_url, :method => :delete %> </li>
+	          </ul>
+	        <% end %>
+	      </nav>
+        </div>
+	  </div>
+    </header>
 
-
-<%= yield %>
-
+  <div class = "container">
+    <%= yield %>
+  </div>
 </body>
 </html>
