@@ -7,19 +7,13 @@ class SessionsController < ApplicationController
       
     if user.nil?
       session[:errors] = "Credentials were wrong"
-      puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-      puts "rendering new"
       render :new
     else
       self.current_user = user
-      if(current_user.favorites.length == 0)
-        puts "!!!!!!!!!!!!!!!!!!!!!!!!!!"
-        puts "redirecting to factories"
+      if(self.current_user.favorites.length == 0)
         redirect_to factories_url
       else
-        puts "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-        puts "redirecting to favorites"
-        redirect_to user_favorites_url(user)
+        redirect_to favorites_url
       end
     end
   end

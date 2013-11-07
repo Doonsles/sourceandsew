@@ -1,13 +1,21 @@
 class FavoritesController < ApplicationController
   def index
-    @user = User.find(params[:user_id])
-    @favorites = @user.favorites
-        
+    @factories = Factory.all 
+    @factories.each do |factory|
+      if Favorite.find_by_factory_id_and_user_id(factory.id, current_user.id)
+        factory.favorited = true
+      else
+        factory.favorited = false
+      end
+    end
+   
     render :index
   end
   
   def create
-    @favorite = Favorite.new(params[:favorite])
+    puts params
+    @favorite = Favorite.new(:user_id => current_user.id, 
+        :factory_id => params[:factory_id])
     if @favorite.save
       redirect_to factories_url
     else
@@ -17,9 +25,14 @@ class FavoritesController < ApplicationController
   end
   
   def destroy
-    @favorite = Favorite.find(params[:id])
-    
+    @favorite = Favorite.find_by_factory_id_and_user_id(params[:factory_id], current_user.id)
     @favorite.destroy
-    redirect_to factories_url
+    head :ok
+    
+    # @favorite = Favorite.find(params[:id])
+    # 
+    # @favorite.destroy
+    # redirect_to factories_url
   end
+  
 end

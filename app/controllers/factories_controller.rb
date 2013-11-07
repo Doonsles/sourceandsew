@@ -1,9 +1,20 @@
 class FactoriesController < ApplicationController
-  before_filter :require_current_user!
+  #before_filter :require_current_user!
   def index
     @factories = Factory.all
+    @factories.each do |factory|
+      if Favorite.find_by_factory_id_and_user_id(factory.id, current_user.id)
+        factory.favorited = true
+      else
+        factory.favorited = false
+      end
+    end
     
-    render :index
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @factories }
+    end
+    #render :index
   end
   
   def show
@@ -11,4 +22,6 @@ class FactoriesController < ApplicationController
     
     render :show
   end
+  
+
 end

@@ -1,0 +1,15 @@
+<h1> Favorite Factories </h1>
+
+<%@factories.each do |factory|%>
+  <% if factory.favorited %>
+    <ul class="unstyled">
+      <li><%= factory.name %></li>
+      <li><%= factory.description %> </li>
+      <li><%= factory.location %> </li>
+      <li><%= factory.phone %> </li>
+    </ul>
+  <% end %>
+<%end%>
+
+<br>
+<%= link_to "Browse Factories", factories_url %>

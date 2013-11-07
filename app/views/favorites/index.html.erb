@@ -1,9 +1,0 @@
-<h1> Favorite Factories </h1>
-
-<%@favorites.each do |favorite|%>
-  <%factory = Factory.find(favorite.factory_id)%>
-  <%= render "layouts/factories_partial" , factory: factory%>
-<%end%>
-
-<br>
-<%= link_to "Browse Factories", factories_url %>

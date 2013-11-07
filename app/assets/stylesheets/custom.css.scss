@@ -87,9 +87,16 @@ p {
 .navbar .container { 
 	height: 4em; 
 	
+	
 }
 
-.nav li {
+.navbar-inner {
 	color: red;
+}
+
+/* welcome message */
+.nav .welcome-mess{
+	color: #2ecc71;
 	float: left;
+	padding-top: 10px;
 }

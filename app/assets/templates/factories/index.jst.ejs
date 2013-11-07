@@ -1,0 +1,21 @@
+<h1> <%= title %></h1>
+
+<ul class="unstyled" >
+  <% factories.each(function (factory){ %>
+    <li><%= factory.get("name") %></li>
+    <li><%= factory.get("description") %> </li>
+    <li><%= factory.get("location") %> </li>
+    <li><%= factory.get("phone") %> </li>
+	
+	<% if (factory.get("favorited")) { %>
+	  	<button class="unfavorite" data-id="<%= factory.id %>">
+		Unfavorite!</button>
+	<% } else {%>
+	  	<button class="favorite" data-id="<%= factory.id %>">
+		Favorite!</button>
+	<% } %>
+
+	<br>
+	<br>
+  <% }) %>
+</ul>
