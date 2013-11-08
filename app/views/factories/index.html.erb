@@ -1,2 +1,14 @@
+<script>
+function runJavaScript () {
+  var indexView = new SourceAndSew.Views.FactoriesIndex({
+	  collection: SourceAndSew.factories
+  });
+  
+  indexView.render();
+  $('.factory-list').append(indexView.$el);
+}
+
+</script>
+
 <div class="factory-list">
 </div>

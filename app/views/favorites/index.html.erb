@@ -1,0 +1,14 @@
+<script>
+function runJavaScript (){
+	  var indexView = new SourceAndSew.Views.FavoritesIndex({
+		  collection: SourceAndSew.factories
+	  });
+	  
+	  indexView.render();
+	  $('.favorite-factory-list').append(indexView.$el);
+}
+  
+</script>
+
+<div class="favorite-factory-list">
+</div>

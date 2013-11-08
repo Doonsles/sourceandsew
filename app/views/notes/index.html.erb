@@ -1,9 +1,16 @@
-<h1> My Factory Notes </h1>
+<h1> All Notes </h1>
 
-<% @notes.each do |note| %>
-  <ul class="unstyled">
-    <% factory = Factory.find(note.factory_id)%>
-    <li> <%=factory.name%> </li>
-    <li> <%= render "layouts/edit_note" , factory: factory, note: note%> </li>
-  </ul>
-<% end %>
+<script>
+function runJavaScript() {
+	var indexView = new SourceAndSew.Views.NotesIndex({
+		collection: SourceAndSew.factories
+	});
+	
+	indexView.render();
+	
+	$('.notes-list').append(indexView.$el);
+}
+</script>
+
+<div class="notes-list">
+</div>

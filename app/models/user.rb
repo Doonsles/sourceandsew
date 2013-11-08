@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :notes
   
+  has_many :noted_factories, :through => :notes, :source => :factory
+  
   def password=(password)
     @password = password
     self.encrypted_pass = BCrypt::Password.create(password);

@@ -8,8 +8,12 @@ class FavoritesController < ApplicationController
         factory.favorited = false
       end
     end
-   
-    render :index
+    
+    respond_to do |format|
+      format.html { render :index}
+      format.json { render :json => @factories }
+    end
+    # render :index
   end
   
   def create

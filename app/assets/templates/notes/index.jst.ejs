@@ -1,0 +1,10 @@
+<ul class="unstyled" >
+  <% factories.each(function (factory){ %>
+      <% if (notes[factory.escape("name")]) {%>
+	    <li><%= factory.escape("name") %></li>
+		<li><%= notes[factory.escape("name")] %></li>
+	  <% } %>
+	<br>
+	<br>
+  <% }) %>
+</ul>

@@ -9,7 +9,8 @@ SourceAndSew.Views.FactoriesIndex = Backbone.View.extend({
 	render: function (){
 		var renderedContent = this.template({
 		  title: "All Factories",
-		  factories: this.collection	
+		  factories: this.collection,
+		  notes: this.collection.notes()	
 		});
 		
 		this.$el.html(renderedContent);
@@ -18,7 +19,8 @@ SourceAndSew.Views.FactoriesIndex = Backbone.View.extend({
 	
 	events: {
 	  "click .favorite": "favoriteFactory", 
-	  "click .unfavorite": "unfavoriteFactory"
+	  "click .unfavorite": "unfavoriteFactory",
+	  "click .create-note": "createNote"
 	},
 	
 	favoriteFactory: function (event){
@@ -43,5 +45,14 @@ SourceAndSew.Views.FactoriesIndex = Backbone.View.extend({
 	  $(event.currentTarget).removeClass('unfavorite').addClass('favorite');
 	  
 	  factory.unfavorite();
+	},
+	
+	createNote: function (event){
+		alert("Let's make a note!");
+		event.preventDefault();
+		var factoryId = $(event.currentTarget).attr("data-id");
+		
+		var myFactory = SourceAndSew.factories.get(parseInt(factoryId));
+		// factory.addNote();
 	}
 });
