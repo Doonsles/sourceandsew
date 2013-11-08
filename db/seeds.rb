@@ -25,7 +25,7 @@ Favorite.create({ :user_id => 1, :factory_id => 2})
 Favorite.create({ :user_id => 2, :factory_id => 3})
 Favorite.create({ :user_id => 2, :factory_id => 4})
 
-Note.create({ :factory_id => 1, :user_id => 3, :content => "note 1"})
-Note.create({ :factory_id => 2, :user_id => 3, :content => "note 2"})
-Note.create({ :factory_id => 3, :user_id => 3, :content => "note 3"})
+# Note.create({ :factory_id => 1, :user_id => 3, :content => "note 1"})
+# Note.create({ :factory_id => 2, :user_id => 3, :content => "note 2"})
+# Note.create({ :factory_id => 3, :user_id => 3, :content => "note 3"})
 

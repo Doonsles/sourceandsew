@@ -1,9 +1,9 @@
-SourceAndSew.Collections.Notes = Backbone.Collection.extend({
+SourceAndSew.Collections.NotedFactories = Backbone.Collection.extend({
   initialize: function(models, options){
     // this.factory = options.factory;
   },
   
-  model: SourceAndSew.Models.Note,
+  model: SourceAndSew.Models.Factory,
   
   url: "/notes"	
 });

@@ -1,10 +1,5 @@
-<ul class="unstyled" >
-  <% factories.each(function (factory){ %>
-      <% if (notes[factory.escape("name")]) {%>
-	    <li><%= factory.escape("name") %></li>
-		<li><%= notes[factory.escape("name")] %></li>
-	  <% } %>
-	<br>
-	<br>
-  <% }) %>
+<h1> <%= title %></h1>
+
+<ul class="thumbnails" id="notes-index">
+
 </ul>

@@ -1,23 +1,5 @@
-<h1> Favorite Factories </h1>
+<h1> <%= title %></h1>
 
+<ul class="thumbnails" id="favorites-index">
 
-<ul class="unstyled" >
-  <% factories.each(function (factory){ %>
-    <% if(factory.get("favorited")) { %>
-      <li><%= factory.get("name") %></li>
-      <li><%= factory.get("description") %> </li>
-      <li><%= factory.get("location") %> </li>
-      <li><%= factory.get("phone") %> </li>
-	  
-      <% if (notes[factory.escape("name")]) {%>
-  	  <li><%= notes[factory.escape("name")] %></li>
-      <% } %>
-	
-	  <button class="unfavorite" data-id="<%= factory.id %>">
-		Unfavorite!</button>
-		<br>
-		<br>
-    <% } %>
-
-  <% }) %>
 </ul>

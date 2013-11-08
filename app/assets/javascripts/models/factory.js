@@ -30,13 +30,14 @@ SourceAndSew.Models.Factory = Backbone.Model.extend ({
 		  url: 	"/factories/" + factory.id + "/favorite",
 		  
 		  success: function (data){
+			console.log("setting favorited to false for " + factory.get("name"));
 		    factory.set("favorited", false);
 		}
 		});
 	},
 	
 	parse: function(serverAttributes, options) {
-		this.notes().set(serverAttributes.notes);
+		this.notes().set(serverAttributes.notes[0]);
 		delete serverAttributes.notes
 		return serverAttributes;
 	},

@@ -8,51 +8,20 @@ SourceAndSew.Views.FactoriesIndex = Backbone.View.extend({
 	
 	render: function (){
 		var renderedContent = this.template({
-		  title: "All Factories",
-		  factories: this.collection,
-		  notes: this.collection.notes()	
+		  title: "All Factories"	
 		});
 		
 		this.$el.html(renderedContent);
+		
+		var $container = this.$el.find("#factories-index");
+		
+		this.collection.each (function (factory) {
+			var showView = new SourceAndSew.Views.FactoryShow ({ model: factory });
+			showView.render();
+			$container.append(showView.$el);
+		});
+		
 		return this;
-	},
-	
-	events: {
-	  "click .favorite": "favoriteFactory", 
-	  "click .unfavorite": "unfavoriteFactory",
-	  "click .create-note": "createNote"
-	},
-	
-	favoriteFactory: function (event){
-		event.preventDefault();
-		var factoryId = $(event.currentTarget).attr("data-id");
-		
-		var factory = SourceAndSew.factories.get(factoryId);
-		// $(event.currentTarget).css("display", "none");
-		 $(event.currentTarget).html("Unfavorite!");
-		 $(event.currentTarget).removeClass('favorite').addClass('unfavorite');
-		 
-		factory.favorite();
-	},
-	
-	unfavoriteFactory: function (event){
-	  event.preventDefault();
-	  
-	  var factoryId = $(event.currentTarget).attr("data-id");
-	  
-	  var factory = SourceAndSew.factories.get(factoryId);
-	  $(event.currentTarget).html("Favorite!");
-	  $(event.currentTarget).removeClass('unfavorite').addClass('favorite');
-	  
-	  factory.unfavorite();
-	},
-	
-	createNote: function (event){
-		alert("Let's make a note!");
-		event.preventDefault();
-		var factoryId = $(event.currentTarget).attr("data-id");
-		
-		var myFactory = SourceAndSew.factories.get(parseInt(factoryId));
-		// factory.addNote();
 	}
+	
 });

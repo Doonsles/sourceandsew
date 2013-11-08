@@ -1,34 +1,5 @@
 <h1> <%= title %></h1>
 
-<ul class="unstyled" >
-  <% factories.each(function (factory){ %>
-    <li><%= factory.get("name") %></li>
-    <li><%= factory.get("description") %> </li>
-    <li><%= factory.get("location") %> </li>
-    <li><%= factory.get("phone") %> </li>
-	
-    <% if (notes[factory.escape("name")]) {%>
-	  <li><%= notes[factory.escape("name")] %></li>
-	  <li> <button class="edit-note" data-id="<%= factory.id %>">edit note</button>
-    <% } else { %>
-	  <form action="/notes" method="post" style="display:inline">
-	    <input type="hidden" value ="<%=factory.get("id")%>" name="note[factory_id]">
-	    <input type="textarea" name="note[content]" data-id="note">
-		<input type="submit" class="create-note" data-id="<%= factory.id %>"
-		  value="Create Note">	  
-	  </form>
-	  <br>
-	<% } %>
-	
-	<% if (factory.get("favorited")) { %>
-	  	<button class="unfavorite" data-id="<%= factory.id %>">
-		Unfavorite!</button>
-	<% } else {%>
-	  	<button class="favorite" data-id="<%= factory.id %>">
-		Favorite!</button>
-	<% } %>
+<ul class="thumbnails" id="factories-index">
 
-	<br>
-	<br>
-  <% }) %>
 </ul>

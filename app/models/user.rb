@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :notes
   
   has_many :noted_factories, :through => :notes, :source => :factory
+  has_many :favorited_factories, :through => :favorites, :source => :factory
   
   def password=(password)
     @password = password

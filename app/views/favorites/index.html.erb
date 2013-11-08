@@ -1,11 +1,18 @@
 <script>
 function runJavaScript (){
-	  var indexView = new SourceAndSew.Views.FavoritesIndex({
-		  collection: SourceAndSew.factories
-	  });
+	SourceAndSew.favorites = 
+	    new SourceAndSew.Collections.FavoritedFactories();
+	
+	SourceAndSew.favorites.fetch({
+		success: function (){
+	  	  var indexView = new SourceAndSew.Views.FavoritesIndex({
+	  		  collection: SourceAndSew.favorites
+	  	  });
 	  
-	  indexView.render();
-	  $('.favorite-factory-list').append(indexView.$el);
+	  	  indexView.render();
+	  	  $('.favorite-factory-list').append(indexView.$el);
+		}
+	});
 }
   
 </script>

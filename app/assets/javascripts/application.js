@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.serializeJSON
 //= require underscore
 //= require backbone
 //= require source_and_sew
@@ -21,3 +22,4 @@
 //= require_tree ./views
 //= require_tree ./routers
 //= require_tree .
+//= require bootstrap
