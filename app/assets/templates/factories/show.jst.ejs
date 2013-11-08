@@ -13,7 +13,7 @@
 <% } %>
 
 <form action="/notes" method="post" style="display:inline" 
-  class="<%= buttonClass %>">
+  class="<%= buttonClass %>" data-id= "<%= factory.get("id")%>">
   <input type="hidden" value ="<%=factory.get("id")%>" 
     name="note[factory_id]">
   <input type="textarea" name="note[content]" data-id="note"

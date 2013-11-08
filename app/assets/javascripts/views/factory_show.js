@@ -36,22 +36,23 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	},
 	
 	createNote: function (event){
-		alert("Let's make a note!");
 		event.preventDefault();
 		serialized = $(event.target).serializeJSON();
 		var note = new SourceAndSew.Models.Note(serialized.note);
- 
-		note.save({}, {
-			error: function () {
-			  alert("there was an errror!!!");	
-			},
-			success: function () {
-				SourceAndSew.notedFactories.add(note);
-			}
- 		});
+      
+		note.save({}, {});
+		
+		$(event.currentTarget).children(":submit").removeClass("create-note");
+		$(event.currentTarget).children(":submit").addClass("edit-note");
+		$(event.currentTarget).children(":submit").val("edit note");
 	},
 	
 	editNote: function (event){
-	  alert ("Let's edit the note!");	
+	  event.preventDefault();
+	  
+	  var NoteToEdit = SourceAndSew.factories.get($(event.target).data("id")).notes();
+	  
+	  var serialized = $(event.currentTarget).serializeJSON();
+	  NoteToEdit.save(serialized);
 	}
 });

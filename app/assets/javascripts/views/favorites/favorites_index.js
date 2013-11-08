@@ -7,7 +7,6 @@ SourceAndSew.Views.FavoritesIndex = Backbone.View.extend({
   },	
   
   render: function (){
-	  console.log("rendering!!!")
 	  var renderedContent = this.template({
 		  title: "Favorite Factories"
 	  });
