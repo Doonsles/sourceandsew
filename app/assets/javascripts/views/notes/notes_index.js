@@ -16,9 +16,11 @@ SourceAndSew.Views.NotesIndex = Backbone.View.extend ({
 	  var $container = this.$el.find("#notes-index");
 	  
 	  this.collection.each(function (factory) {
-		var showView = new SourceAndSew.Views.FactoryShow ({ model: factory });
-		showView.render();
-		$container.append(showView.$el);
+		if(factory.notes().escape("content")) { 
+		  var showView = new SourceAndSew.Views.FactoryShow ({ model: factory });
+		  showView.render();
+		  $container.append(showView.$el);
+	    }
 	  });
 	  
 	  return this;

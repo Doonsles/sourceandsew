@@ -14,11 +14,11 @@
 	  <div class ="navbar-inner">
 		<div class = "container">
 		  <nav>
-		    <% if current_user.nil? %>
-	        <%= link_to "Sign In", new_session_url%>
-	
-	        <% else %>
 	          <ul class = "nav pull-right">
+	  		    <% if current_user.nil? %>
+	  	        <%= link_to "Sign In", new_session_url%>
+	
+	  	        <% else %>
 		        <li class="welcome-mess"> Welcome, <%= current_user.username %> </li>
 				<li> <%= link_to "Home", root_url, :method => :get %></li>
 				<li> <%= link_to "View Favorites", favorites_url, :method => :get %> </li>

@@ -1,8 +1,15 @@
 SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	template: JST["factories/show"],
 	
+    initialize: function(options) {
+  	  this.listenTo(this.model, "change", this.render);
+  	  this.listenTo(this.model, "add remove sync", this.render);
+    },
 	
 	render: function (){
+		console.log("factoryShow render for " + this.model.get("name"));
+		console.log("does this factory have notes?");
+		console.log((this.model.notes().escape("content")));
 		var renderedContent = this.template({
 		  factory: this.model,	
 		});
@@ -15,7 +22,8 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	  "click .favorite": "favoriteFactory", 
 	  "click .unfavorite": "unfavoriteFactory",
 	  "submit .create-note": "createNote",
-	  "submit .edit-note" : "editNote"
+	  "submit .edit-note" : "editNote",
+	  "click .delete-note" : "deleteNote"
 	},
 	
 	favoriteFactory: function (event){
@@ -54,5 +62,23 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	  
 	  var serialized = $(event.currentTarget).serializeJSON();
 	  NoteToEdit.save(serialized);
+	},
+	
+	deleteNote: function(event){
+	  alert("You clicked the delete button!")
+		
+  	  event.preventDefault();
+	  
+  	  var noteToDelete = SourceAndSew.factories.get($(event.target).data("id")).notes();
+  	  var factoryToEdit = SourceAndSew.factories.get($(event.target).data("id"));
+	  var that = this;
+	  
+	  noteToDelete.destroy({
+		  success: function (){
+			  factoryToEdit.deleteNotes();
+			  that.render();
+		  }
+  	  });
+	  
 	}
 });

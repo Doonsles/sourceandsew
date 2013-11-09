@@ -19,4 +19,8 @@ window.SourceAndSew = {
 
 $(document).ready(function(){
 	SourceAndSew.initialize();
+	$('.carousel').carousel({
+	  interval: 4000,
+	  pause:'hover'
+	  });
 });

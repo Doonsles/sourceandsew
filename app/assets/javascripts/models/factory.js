@@ -9,6 +9,12 @@ SourceAndSew.Models.Factory = Backbone.Model.extend ({
 	  return this._factoryNotes;
 	},
 	
+	deleteNotes: function (){
+		console.log("notes deleted! for " + this.get("name"));
+		this._factoryNotes.set({content: undefined});	
+		console.log("the notes for this factory are " + this.notes().get("content"));
+	},
+	
 	favorite: function () {
 		var factory = this;
 		
@@ -36,6 +42,7 @@ SourceAndSew.Models.Factory = Backbone.Model.extend ({
 	},
 	
 	parse: function(serverAttributes, options) {
+		console.log("parsing");
 		this.notes().set(serverAttributes.notes[0]);
 		delete serverAttributes.notes
 		return serverAttributes;

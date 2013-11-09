@@ -1,0 +1,42 @@
+<li><%= factory.get("name") %></li>
+<li><%= factory.get("description") %> </li>
+<li><%= factory.get("location") %> </li>
+<li><%= factory.get("phone") %> </li>
+
+<% if (factory.notes().escape("content")) {%>
+    <% var myNote = factory.notes().escape("content"); %>
+	<% var buttonVal = "edit note" %>
+	<% var buttonClass = "edit-note"%>
+<% } else { %>
+    <% var buttonVal = "create note" %>
+	<% var buttonClass = "create-note" %>
+<% } %>
+
+<form action="/notes" method="post" style="display:inline" 
+  class="<%= buttonClass %>" data-id= "<%= factory.get("id")%>">
+  <input type="hidden" value ="<%=factory.get("id")%>" 
+    name="note[factory_id]">
+  <input type="textarea" name="note[content]" data-id="note"
+    value= "<%= myNote %>" >
+  <input type="submit" class="<%= buttonClass %>" value="<%= 
+    buttonVal %>">	  
+</form>
+
+<% if (factory.notes().escape("content")) { %>
+    <button class="delete-note" data-id="<%= factory.get("id") %>">
+      Delete Note</button>
+<% } %>
+<br>
+<br>
+	
+<% if (factory.get("favorited")) { %>
+  <button class="unfavorite" data-id="<%= factory.id %>">
+    Unfavorite!</button>
+<% } else {%>
+  <button class="favorite" data-id="<%= factory.id %>"> 
+    Favorite!</button>
+<% } %>
+<br>
+<br>
+<br>
+<br>

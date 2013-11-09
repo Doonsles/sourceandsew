@@ -2,7 +2,8 @@ class NotesController < ApplicationController
   def index
     current_user.id
 
-    @factories = current_user.noted_factories.includes(:notes)
+    # @factories = current_user.noted_factories.includes(:notes)
+    @factories = Factory.all
     
     respond_to do |format|
       format.html { render :index}
@@ -32,9 +33,9 @@ class NotesController < ApplicationController
   end
   
   def destroy
-  #   @note = Note.find(params[:id])
-  #   
-  #   @note.destroy
-  #   redirect_to factories_url
+    @note = Note.find(params[:id])
+    
+    @note.destroy
+    render :json => {}
   end
 end

@@ -1,5 +1,5 @@
 class FactoriesController < ApplicationController
-  #before_filter :require_current_user!
+  before_filter :require_current_user!
   def index
     @factories = Factory.all
     @factories.each do |factory|

@@ -26,16 +26,13 @@ textarea {
   margin-bottom: 10px;
 }
 
-.navbar-inner {
-	background-color: red;
-}
-
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
-  color: 00608b;
-  /*font-family: font-family: Georgia, "LatoLight", Times, serif;*/
+  //font-family: Optima, Segoe, Calibri, Arial, sans-serif;
+  //font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
 }
 
 h1 {
@@ -43,6 +40,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: left;
+  color: 00608b;
 }
 
 h2 {
@@ -51,7 +49,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-//  color: #999;
+  color: #999999;
 }
 
 p {
