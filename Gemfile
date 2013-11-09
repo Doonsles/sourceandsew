@@ -30,6 +30,9 @@ gem 'bootstrap-sass', '2.3.2.0'
 #gem "bootstrap-sass", "~> 3.0.0.0"
 gem 'backbone-on-rails'
 gem 'underscore-rails'
+gem "figaro"
+gem "paperclip"
+gem "aws-sdk"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

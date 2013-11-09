@@ -49,7 +49,6 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: #999999;
 }
 
 p {
@@ -98,8 +97,14 @@ p {
 
 
 /* welcome message */
-.nav .welcome-mess{
+.nav .sign-in-or-welcome{
 	color: #00608b;
 	float: left;
 	padding-top: 10px;
+}
+
+/* modal */
+.modal {
+    width: 250px;
+	margin-left: -120px;
 }

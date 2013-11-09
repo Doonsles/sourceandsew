@@ -16,10 +16,11 @@
 		  <nav>
 	          <ul class = "nav pull-right">
 	  		    <% if current_user.nil? %>
-	  	        <%= link_to "Sign In", new_session_url%>
+				<!-- <li class="sign-in-or-welcome"> <a href="/session/new">Sign In</a></li> -->
+				<li class="sign-in-or-welcome"> <a href="#myModal" role="button" data-toggle="modal">Sign In</a> </li>
 	
 	  	        <% else %>
-		        <li class="welcome-mess"> Welcome, <%= current_user.username %> </li>
+		        <li class="sign-in-or-welcome"> Welcome, <%= current_user.username %> </li>
 				<li> <%= link_to "Home", root_url, :method => :get %></li>
 				<li> <%= link_to "View Favorites", favorites_url, :method => :get %> </li>
 		        <li> <%= link_to "View Notes", notes_url, :method => :get%></li>
@@ -31,6 +32,28 @@
         </div>
 	  </div>
     </header>
+ 
+	<!-- Modal -->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+	    <h3 id="myModalLabel">Sign In</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>
+			<form action="<%= session_url %>" method="post" accept-charset="utf-8">
+				<input type="hidden" name="authenticity_token" id="<%=form_authenticity_token%>">
+	
+				<label for="username">username</label><input type="text" name="user[username]"
+				 id="username" value="guest">
+			    <label for="password">password</label><input type="password" name="user[password]" 
+				  value="password" id="password">
+				<p><input type="submit" class="btn" value="Sign In"></p>
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			</form>
+	    </p>
+	  </div>
+	</div>
 
   <div class = "container">
     <%= yield %>
