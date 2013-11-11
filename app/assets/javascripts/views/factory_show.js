@@ -11,33 +11,21 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 		  factory: this.model,	
 		});
 		
+  	    // $(".factory-list").click(function() {
+  	    //   alert("you clicked!")
+  	    // });
+		
 		this.$el.html(renderedContent);
 		return this;
 	},
 	
 	events: {
-	  "click .favorite": "favoriteFactory", 
-	  "click .unfavorite": "unfavoriteFactory",
 	  "submit .create-note": "createNote",
 	  "submit .edit-note" : "editNote",
-	  "click .delete-note" : "deleteNote"
-	},
-	
-	favoriteFactory: function (event){
-		event.preventDefault();
-		 $(event.currentTarget).html("Unfavorite!");
-		 $(event.currentTarget).removeClass('favorite').addClass('unfavorite');
-		 
-		this.model.favorite();
-	},
-	
-	unfavoriteFactory: function (event){
-	  event.preventDefault();
-	  
-	  $(event.currentTarget).html("Favorite!");
-	  $(event.currentTarget).removeClass('unfavorite').addClass('favorite');
-	  
-	  this.model.unfavorite();
+	  "click .delete-note" : "deleteNote",
+	  "mouseenter .factory-image" : "popUpHeart",
+	  "mouseleave .factory-image" : "removeHeart",
+	  "click .heart" : "clickHeart"
 	},
 	
 	createNote: function (event){
@@ -75,5 +63,23 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 		  }
   	  });
 	  
+	},
+	
+	popUpHeart: function (event){
+		event.preventDefault();
+		$(event.currentTarget).children(".heart").fadeIn(200);
+	},
+	
+	removeHeart: function (event){
+		event.preventDefault();
+		$(event.currentTarget).children(".heart").fadeOut(300);
+	},
+	
+	clickHeart: function(event){
+		if(this.model.get("favorited")){ 
+			this.model.unfavorite();
+	    } else {
+		  this.model.favorite();
+		}	
 	}
 });

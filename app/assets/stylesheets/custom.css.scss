@@ -114,3 +114,25 @@ padding-top: 0;
 
 }
 
+/* factory images */
+.factory-image {
+  position: relative;	
+}
+
+.heart {
+	position: absolute;
+    left: 0;
+	opacity: 0.5;
+	height: 1 px;
+	width: 1 px;
+	display: none;
+}
+
+.opaque-heart {
+	position: absolute;
+    left: 0;
+	opacity: 1;
+	height: 1 px;
+	width: 1 px;
+}
+

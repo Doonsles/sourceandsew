@@ -22,6 +22,6 @@ SourceAndSew.Views.FactoriesIndex = Backbone.View.extend({
 		});
 		
 		return this;
-	}
+	},
 	
 });

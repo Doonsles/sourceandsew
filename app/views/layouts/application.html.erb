@@ -33,7 +33,8 @@
 				
 	  		    <% if current_user.nil? %>
 				<!-- <li class="sign-in-or-welcome"> <a href="/session/new">Sign In</a></li> -->
-				<li class="sign-in-or-welcome"> <a href="#myModal" role="button" data-toggle="modal">Sign In</a> </li>
+				<li class="nav-links"> <%= link_to "View Factories", factories_url, :method => :get%></li>
+				<li class="nav-links"> <a href="#myModal" role="button" data-toggle="modal">Sign In</a> </li>
 	
 	  	        <% else %>
 		        <li class="sign-in-or-welcome"> Welcome, <%= current_user.username %> </li>
@@ -41,8 +42,9 @@
 				<li class="nav-links"> <%= link_to "View Favorites", favorites_url, :method => :get %> </li>
 		        <li class="nav-links"> <%= link_to "View Notes", notes_url, :method => :get%></li>
 				<li class="nav-links"><%= link_to "Sign Out", session_url, :method => :delete %> </li>
-	          </ul>
+	          
 	        <% end %>
+			</ul>
 	      </nav>
         </div>
 	  </div>
