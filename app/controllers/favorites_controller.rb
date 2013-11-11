@@ -1,4 +1,5 @@
 class FavoritesController < ApplicationController
+  before_filter :require_current_user!
   def index
     @factories = current_user.favorited_factories.includes(:notes)
     @factories.each do |factory|

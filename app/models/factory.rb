@@ -9,7 +9,7 @@ class Factory < ActiveRecord::Base
   attr_accessor :favorited
 
   validates :phone, :name, :presence => true
-  validates :name, :phone, :uniqueness => true
+  validates :name, :uniqueness => true
   
   has_many :favorites
   has_many :notes

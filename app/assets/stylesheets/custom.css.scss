@@ -69,6 +69,10 @@ p {
   height: 90px; //make sure to add an equal amount of padding to body if this changes
 }
 
+.navbar-inner {
+	background-color: red;
+}
+
 .carousel {
 	position: absolute;
 	left: 0;
