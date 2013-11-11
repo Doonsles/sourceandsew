@@ -3,7 +3,7 @@
 /*universal */
 
 body {
-	padding-top: 60px;
+	padding-top: 90px;
 }
 
 html {
@@ -54,26 +54,9 @@ h2 {
 p {
   font-size: 1.1em;
   line-height: 1.7em;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
 }
 
-/* header */
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  //color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  line-height: 1;
-}
-
-#logo:hover {
-  color: #fff;
-  text-decoration: none;
-}
 
 /* button */
 
@@ -83,9 +66,7 @@ p {
 
 /* navbar */
 .navbar .container { 
-	height: 4em; 
-	
-	
+  height: 90px; //make sure to add an equal amount of padding to body if this changes
 }
 
 .carousel {
@@ -95,12 +76,25 @@ p {
 //	top: 0;
 }
 
+.carousel-inner {
+	cursor: pointer;
+}
+
 
 /* welcome message */
 .nav .sign-in-or-welcome{
 	color: #00608b;
 	float: left;
-	padding-top: 10px;
+	//padding-top: 10px;
+	padding-top: 30px;
+	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
+    font-size: 1.5em; 
+}
+
+.nav .nav-links{
+  padding-top: 20px;
+  font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
+  font-size: 1.5em;  
 }
 
 /* modal */
@@ -108,3 +102,11 @@ p {
     width: 250px;
 	margin-left: -120px;
 }
+
+/* logo */
+.navbar .brand {
+position: fixed;       
+padding-top: 0;
+
+}
+

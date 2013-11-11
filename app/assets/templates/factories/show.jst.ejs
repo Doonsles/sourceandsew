@@ -1,6 +1,6 @@
 <li class="span4">
   <div class="thumbnail">
-   <img src = "assets/carousel-slide-1.png" style="width: 250px; height: 200px"
+   <img src = "https://s3-us-west-2.amazonaws.com/sourceandsew/<%= factory.get("photo_file_name") %>" style="width: 250px; height: 200px" >
     <div class = "caption">
       <h3> <%= factory.get("name") %> </h3>
 	  <p><%= factory.get("description") %> </p>
@@ -22,22 +22,22 @@
 	      name="note[factory_id]">
 	    <input type="textarea" name="note[content]" data-id="note"
 	      value= "<%= myNote %>" >
-	    <input type="submit" class="<%= buttonClass %>" value="<%= 
+	    <input type="submit" class="<%= buttonClass %> btn" value="<%= 
 	      buttonVal %>">	  
 	  </form>
 
 	  <% if (factory.notes().escape("content")) { %>
-	      <button class="delete-note" data-id="<%= factory.get("id") %>">
+	      <button class="delete-note btn" data-id="<%= factory.get("id") %>">
 	        Delete Note</button>
 	  <% } %>
 	  <br>
 	  <br>
 	
 	  <% if (factory.get("favorited")) { %>
-	    <button class="unfavorite" data-id="<%= factory.id %>">
+	    <button class="btn unfavorite" data-id="<%= factory.id %>">
 	      Unfavorite!</button>
 	  <% } else {%>
-	    <button class="favorite" data-id="<%= factory.id %>"> 
+	    <button class="btn favorite" data-id="<%= factory.id %>"> 
 	      Favorite!</button>
 	  <% } %>
     </div>

@@ -8,24 +8,39 @@
   <!--[if lt IE 9]>
   <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
   <![endif]-->
+ <script>
+ function runJavaScript () {
+	 
+ }
+   $(document).ready(function(){
+     $(".carousel-inner").click(function() {
+       window.location.href = "/session/new";
+     });
+  });
+ </script>	  
+	  
 </head>
 <body>
+
+	<!-- <img src="https://s3-us-west-2.amazonaws.com/sourceandsew/sewing-machine-thread.png" > -->
 	<header class="navbar navbar-fixed-top">
 	  <div class ="navbar-inner">
+	    <a href="/" class="brand"><img alt="" src="/assets/sewing-machine-logo.png" /></a>
 		<div class = "container">
+		  
 		  <nav>
 	          <ul class = "nav pull-right">
+				
 	  		    <% if current_user.nil? %>
 				<!-- <li class="sign-in-or-welcome"> <a href="/session/new">Sign In</a></li> -->
 				<li class="sign-in-or-welcome"> <a href="#myModal" role="button" data-toggle="modal">Sign In</a> </li>
 	
 	  	        <% else %>
 		        <li class="sign-in-or-welcome"> Welcome, <%= current_user.username %> </li>
-				<li> <%= link_to "Home", root_url, :method => :get %></li>
-				<li> <%= link_to "View Favorites", favorites_url, :method => :get %> </li>
-		        <li> <%= link_to "View Notes", notes_url, :method => :get%></li>
-		        <li> <%= link_to "View All Factories", factories_url, :method => :get%></li>
-				<li><%= link_to "Sign Out", session_url, :method => :delete %> </li>
+				<li class="nav-links"> <%= link_to "View All Factories", factories_url, :method => :get%></li>
+				<li class="nav-links"> <%= link_to "View Favorites", favorites_url, :method => :get %> </li>
+		        <li class="nav-links"> <%= link_to "View Notes", notes_url, :method => :get%></li>
+				<li class="nav-links"><%= link_to "Sign Out", session_url, :method => :delete %> </li>
 	          </ul>
 	        <% end %>
 	      </nav>
@@ -48,13 +63,12 @@
 				 id="username" value="guest">
 			    <label for="password">password</label><input type="password" name="user[password]" 
 				  value="password" id="password">
-				<p><input type="submit" class="btn" value="Sign In"></p>
-				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+				<p><input type="submit" class="btn" value="Sign In">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button></p>
 			</form>
 	    </p>
 	  </div>
 	</div>
-
   <div class = "container">
     <%= yield %>
   </div>
