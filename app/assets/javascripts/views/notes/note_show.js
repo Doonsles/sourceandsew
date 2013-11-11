@@ -1,6 +1,6 @@
-SourceAndSew.Views.FactoryShow = Backbone.View.extend({
-	template: JST["factories/show"],
-	
+SourceAndSew.Views.NoteShow = Backbone.View.extend({
+	template: JST["notes/show"],
+
     initialize: function(options) {
   	  this.listenTo(this.model, "change", this.render);
   	  this.listenTo(this.model, "add remove sync", this.render);
@@ -61,19 +61,23 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	  NoteToEdit.save(serialized);
 	},
 	
-	deleteNote: function(event){		
+	deleteNote: function(event){
+	  alert("You clicked the delete button!")
+		
   	  event.preventDefault();
 	  
-  	  var noteToDelete = SourceAndSew.factories.get($(event.target).data("id")).notes();
-  	  var factoryToEdit = SourceAndSew.factories.get($(event.target).data("id"));
+  	  var noteToDelete = SourceAndSew.notes.get($(event.target).data("id")).notes();
+  	  var factoryToEdit = SourceAndSew.notes.get($(event.target).data("id"));
 	  var that = this;
+	 
 	  
 	  noteToDelete.destroy({
-		  success: function (){
-			  factoryToEdit.deleteNotes();
-			  that.render();
-		  }
+	  		  success: function (){
+	  			  factoryToEdit.deleteNotes();
+	  			  SourceAndSew.notes.trigger("remove");
+	  		  }
   	  });
 	  
 	}
+	
 });

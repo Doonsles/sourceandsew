@@ -2,7 +2,7 @@ SourceAndSew.Models.Factory = Backbone.Model.extend ({
 	urlRoot: "/factories",
 	
 	notes: function() {
-	  if(!this._factoryNotes){
+	  if(!this._factoryNotes || !this._factoryNotes.get("content")){
 		  //this._factoryNotes  = new SourceAndSew.Collections.Notes([], { factory: this });
 		  this._factoryNotes = new SourceAndSew.Models.Note();
 	  }	
@@ -10,9 +10,7 @@ SourceAndSew.Models.Factory = Backbone.Model.extend ({
 	},
 	
 	deleteNotes: function (){
-		console.log("notes deleted! for " + this.get("name"));
 		this._factoryNotes.set({content: undefined});	
-		console.log("the notes for this factory are " + this.notes().get("content"));
 	},
 	
 	favorite: function () {
@@ -42,7 +40,6 @@ SourceAndSew.Models.Factory = Backbone.Model.extend ({
 	},
 	
 	parse: function(serverAttributes, options) {
-		console.log("parsing");
 		this.notes().set(serverAttributes.notes[0]);
 		delete serverAttributes.notes
 		return serverAttributes;
