@@ -34,7 +34,7 @@
 	  		    <% if current_user.nil? %>
 				<!-- <li class="sign-in-or-welcome"> <a href="/session/new">Sign In</a></li> -->
 				<li class="nav-links"> <%= link_to "View Factories", factories_url, :method => :get%></li>
-				<li class="nav-links"> <a href="#myModal" role="button" data-toggle="modal">Sign In</a> </li>
+				<li class="nav-links"> <a href="#signInModal" role="button" data-toggle="modal">Sign In</a> </li>
 	
 	  	        <% else %>
 		        <li class="sign-in-or-welcome"> Welcome, <%= current_user.username %> </li>
@@ -51,7 +51,7 @@
     </header>
  
 	<!-- Modal -->
-	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div id="signInModal" class="modal hide fade sign-in-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-header">
 	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 	    <h3 id="myModalLabel">Sign In</h3>

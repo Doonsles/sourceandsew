@@ -16,29 +16,11 @@ SourceAndSew.Views.NoteShow = Backbone.View.extend({
 	},
 	
 	events: {
-	  "click .favorite": "favoriteFactory", 
-	  "click .unfavorite": "unfavoriteFactory",
 	  "submit .create-note": "createNote",
 	  "submit .edit-note" : "editNote",
 	  "click .delete-note" : "deleteNote"
 	},
-	
-	favoriteFactory: function (event){
-		event.preventDefault();
-		 $(event.currentTarget).html("Unfavorite!");
-		 $(event.currentTarget).removeClass('favorite').addClass('unfavorite');
-		 
-		this.model.favorite();
-	},
-	
-	unfavoriteFactory: function (event){
-	  event.preventDefault();
-	  
-	  $(event.currentTarget).html("Favorite!");
-	  $(event.currentTarget).removeClass('unfavorite').addClass('favorite');
-	  
-	  this.model.unfavorite();
-	},
+
 	
 	createNote: function (event){
 		event.preventDefault();
@@ -62,7 +44,6 @@ SourceAndSew.Views.NoteShow = Backbone.View.extend({
 	},
 	
 	deleteNote: function(event){
-	  alert("You clicked the delete button!")
 		
   	  event.preventDefault();
 	  

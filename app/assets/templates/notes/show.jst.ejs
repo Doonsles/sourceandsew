@@ -29,16 +29,6 @@
     <button class="btn delete-note" data-id="<%= factory.get("id") %>">
       Delete Note</button>
   <% } %>
-	
-  <br>	
-  <br>
-  <% if (factory.get("favorited")) { %>
-    <button class="unfavorite btn" data-id="<%= factory.id %>">
-      remove from favorites </button>
-  <% } else {%>
-    <button class="favorite btn" data-id="<%= factory.id %>"> 
-      add <%= factory.get("name") %> to favories </button>
-  <% } %>
 
 </div>
 </li>

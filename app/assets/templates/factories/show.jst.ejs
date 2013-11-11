@@ -40,6 +40,27 @@
 	      <button class="delete-note btn" data-id="<%= factory.get("id") %>">
 	        Delete Note</button>
 	  <% } %>
+	  
+	  <!-- Button to trigger modal -->
+	  <a href="#EmailModal<%=factory.get("id")%>" role="button" class="btn" data-toggle="modal">
+	      Send message to <%=factory.get("name")%></a>
     </div>
   </div>
 </li>
+
+<!-- Modal -->
+<div id="EmailModal<%=factory.get("id")%>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">to: <%=factory.get("name")%></h3>
+  </div>
+  <div class="modal-body">
+    <p>from: guest@sourceandsew.com</p>
+	<p> Your message: </p>
+	<textarea cols="10" rows="10"></textarea>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Send Message</button>
+  </div>
+</div>
