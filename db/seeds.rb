@@ -32,22 +32,13 @@ f5 = Factory.create({:phone => "456-789-0123",  :description => "America wears J
 f5.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-8.png")
 f5.save!
 
-f6 = Factory.create({:phone => "567-890-1234",  :description => "Making someone's favorite shirt", 
-        :location => "Albany, NY", :name => "All U Incorporated"})
-f6.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-7.png")
-f6.save!
-
-f7 = Factory.create({:phone => "678-901-2345",  :description => "Divine Apparel, Inc.", 
-        :location => "New York, NY", :name => "Divine Apparel, Inc."})
-f7.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-6.png")
-f7.save!
 
 f8 = Factory.create({:phone => "789-012-3456",  :description => "Quality. Guaranteed.", 
         :location => "East Providence, RI", :name => "Turfer"})
 f8.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-4.png")
 f8.save!
 
-f9 = Factory.create({:phone => "890-123-4567",  :description => "New York City-based apparel manufacturer and full service marketing agency.", 
+f9 = Factory.create({:phone => "890-123-4567",  :description => "New York City-based apparel manufacturer.", 
         :location => "New York, NY", :name => "Emma New York"})
 f9.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-2.png")
 f9.save!
@@ -87,6 +78,11 @@ f16 = Factory.create({:phone => "678-901-2345",  :description => "Immediates, Te
 f16.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-3.png")
 f16.save!
 
+f7 = Factory.create({:phone => "678-901-2345",  :description => "Divine Apparel, Inc.", 
+        :location => "New York, NY", :name => "Divine Apparel, Inc."})
+f7.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-6.png")
+f7.save!
+
 f17 = Factory.create({:phone => "789-012-3456",  :description => "Providing over 75 years of quality to the OTC industry.", 
         :location => "Browns Summit, NC", :name => "Logantex"})
 f17.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-2.png")
@@ -97,12 +93,7 @@ f18 = Factory.create({:phone => "890-123-4567",  :description => "Manufactures s
 f18.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-11.png")
 f18.save!
 
-f19 = Factory.create({:phone => "901-234-5678",  :description => "Garment Dyeing At Its Best", 
-        :location => "Commerce, CA", :name => "Los Angeles Dye & Wash Company"})
-f19.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-10.png")
-f19.save!
-
-f20 = Factory.create({:phone => "123-456-7890",  :description => "Expert cutting, sewing, quality control, pressing, packaging and shipping since 1992", 
+f20 = Factory.create({:phone => "123-456-7890",  :description => "Expert cutting, sewing, quality control, pressing, packaging and shipping.", 
         :location => "Fall River, MA", :name => "Precision Sportswear Inc"})
 f20.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-1.png")
 f20.save!
@@ -112,6 +103,15 @@ f21 = Factory.create({:phone => "234-567-8901",  :description => "Doing business
 f21.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk--5.png")
 f21.save!
 
+f6 = Factory.create({:phone => "567-890-1234",  :description => "Making someone's favorite shirt", 
+        :location => "Albany, NY", :name => "All U Incorporated"})
+f6.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-7.png")
+f6.save!
+
+f19 = Factory.create({:phone => "901-234-5678",  :description => "Garment Dyeing At Its Best", 
+        :location => "Commerce, CA", :name => "Los Angeles Dye & Wash Company"})
+f19.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-10.png")
+f19.save!
 
 
 User.create({:username => "guest", :password => "password"}) #has two favorites
