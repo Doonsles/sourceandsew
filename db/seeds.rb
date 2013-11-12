@@ -17,7 +17,7 @@ f2 = Factory.create({:phone => "234-567-8901",  :description => "Bringing color 
 f2.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/sewing-machine-thread.png")
 f2.save!    
     
-f3 = Factory.create({:phone => "345-678-9012",  :description => "Cut & Sew | Screen Printing | Embroidery", 
+f3 = Factory.create({:phone => "345-678-9012",  :description => "Cut & Sew | Embroidery", 
       :location => "Linden, NJ", :name => "Stylus Apparel"})
 f3.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/man-ironing.png")
 f3.save!
@@ -52,15 +52,65 @@ f9 = Factory.create({:phone => "890-123-4567",  :description => "New York City-b
 f9.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-2.png")
 f9.save!
 
-f10 = Factory.create({:phone => "901-234-567",  :description => "From concept to patterns, samples, sourcing, and production starting at 100 units", 
+f10 = Factory.create({:phone => "901-234-567",  :description => "samples, sourcing, and production starting at 100 units", 
         :location => "San Francisco, CA", :name => "S.J. Private Label"})
 f10.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-11.png")
 f10.save!
 
 f11 = Factory.create({:phone => "123-456-7890",  :description => "A Premier Manufacturer and Merchandiser of Quality since 1931.", 
-        :location => "New York, NY", :name => "PICO Manufacturing Sales Corp."})
+        :location => "New York, NY", :name => "PICO Manufacturing"})
 f11.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-10.png")
 f11.save!
+
+f12 = Factory.create({:phone => "234-567-8901",  :description => "Providing the finest woven goods and finishing services for over 60 years.", 
+        :location => "Burlington, NC", :name => "Copland Industries"})
+f12.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-9.png")
+f12.save!
+
+f13 = Factory.create({:phone => "345-678-9012",  :description => "Designing and manufacturing fabrics for four generations.", 
+        :location => "New Rochelle, NY", :name => "Ascher Studio Inc."})
+f13.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-8.png")
+f13.save!
+
+f14 = Factory.create({:phone => "456-789-0123",  :description => "Irish Linen", 
+        :location => "Mineola, NY", :name => "Ulster Weavers/ Moygashel"})
+f14.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-7.png")
+f14.save!
+
+f15 = Factory.create({:phone => "567-890-1234",  :description => "Manufacturer of specialty knits, wovens and jacquards!", 
+        :location => "Haw River, NC", :name => "Interstate Narrow Fabrics"})
+f15.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-4.png")
+f15.save!
+
+f16 = Factory.create({:phone => "678-901-2345",  :description => "Immediates, Textile Short-Run Production", 
+        :location => "Raleigh, NC", :name => "Li Sashay"})
+f16.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-3.png")
+f16.save!
+
+f17 = Factory.create({:phone => "789-012-3456",  :description => "Providing over 75 years of quality to the OTC industry.", 
+        :location => "Browns Summit, NC", :name => "Logantex"})
+f17.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-2.png")
+f17.save!
+
+f18 = Factory.create({:phone => "890-123-4567",  :description => "Manufactures some of America's finest textiles since 1896", 
+        :location => "New York, NY", :name => "American Silk Mills"})
+f18.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-11.png")
+f18.save!
+
+f19 = Factory.create({:phone => "901-234-5678",  :description => "Garment Dyeing At Its Best", 
+        :location => "Commerce, CA", :name => "Los Angeles Dye & Wash Company"})
+f19.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-10.png")
+f19.save!
+
+f20 = Factory.create({:phone => "123-456-7890",  :description => "Expert cutting, sewing, quality control, pressing, packaging and shipping since 1992", 
+        :location => "Fall River, MA", :name => "Precision Sportswear Inc"})
+f20.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-1.png")
+f20.save!
+
+f21 = Factory.create({:phone => "234-567-8901",  :description => "Doing business where you live.", 
+        :location => "Maiden, NC", :name => "Carolina Mills"})
+f21.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk--5.png")
+f21.save!
 
 
 

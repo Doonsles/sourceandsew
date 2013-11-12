@@ -12,43 +12,35 @@
 	   <img src="assets/b-w-heart.gif" class="heart" style="width: 50px; height: 50px"/>
     </div>
 	<div class = "caption">
-      <h3> <%= factory.get("name") %> </h3>
-	  <p><%= factory.get("description") %> </p>
-	  <p><%= factory.get("location") %> </p>
-	  <p><%= factory.get("phone") %> </p>
+      <h4> <%= factory.get("name") %> </h4>
+	  <p><%= factory.get("description") %></p>
+	  <p><h6><%= factory.get("location") %></h6></p>
+	  <p><h6><%= factory.get("phone") %></h6></p>
+	  <% if (factory.notes().escape("content")) {%>
+	    <p><h6><i>note: <%= factory.notes().escape("content") %></i></h6></p>
+	  <% } %>
 	  
 	  <% if (factory.notes().escape("content")) {%>
 	      <% var myNote = factory.notes().escape("content"); %>
-	  	<% var buttonVal = "edit note" %>
+	  	<% var buttonVal = "edit personal note" %>
 	  	<% var buttonClass = "edit-note"%>
 	  <% } else { %>
-	      <% var buttonVal = "create note" %>
+	      <% var buttonVal = "create personal note" %>
 	  	<% var buttonClass = "create-note" %>
 	  <% } %>
-
-	  <form action="/notes" method="post" style="display:inline" 
-	    class="<%= buttonClass %>" data-id= "<%= factory.get("id")%>">
-	    <input type="hidden" value ="<%=factory.get("id")%>" 
-	      name="note[factory_id]">
-	    <input type="textarea" name="note[content]" data-id="note"
-	      value= "<%= myNote %>" >
-	    <input type="submit" class="<%= buttonClass %> btn" value="<%= 
-	      buttonVal %>">	  
-	  </form>
-
-	  <% if (factory.notes().escape("content")) { %>
-	      <button class="delete-note btn" data-id="<%= factory.get("id") %>">
-	        Delete Note</button>
-	  <% } %>
+	  <p></p>
+	  <!-- Button to trigger note modal -->
+	  <a href="#NoteModal<%=factory.get("id")%>" role="button" class="btn" data-toggle="modal">
+	      <%=buttonVal%> </a>
 	  
-	  <!-- Button to trigger modal -->
+	  <!-- Button to trigger email modal -->
 	  <a href="#EmailModal<%=factory.get("id")%>" role="button" class="btn" data-toggle="modal">
-	      Send message to <%=factory.get("name")%></a>
+	      Send this factory a message</a>
     </div>
   </div>
 </li>
 
-<!-- Modal -->
+<!-- Email Modal -->
 <div id="EmailModal<%=factory.get("id")%>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -57,10 +49,40 @@
   <div class="modal-body">
     <p>from: guest@sourceandsew.com</p>
 	<p> Your message: </p>
-	<textarea cols="10" rows="10"></textarea>
+	<textarea cols="150" rows="10" style="width: 90%;"></textarea>
   </div>
   <div class="modal-footer">
     <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     <button class="btn" data-dismiss="modal" aria-hidden="true">Send Message</button>
+  </div>
+</div>
+
+<!-- Note Modal -->
+<div id="NoteModal<%=factory.get("id")%>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><%=buttonVal%></h3>
+	<h6>The button class for the save button is <%= buttonClass %></h6>
+  </div>
+  <div class="modal-body">
+    <form action="/notes" method="post" style="display:inline" data-id= "<%= factory.get("id")%>"
+	  class="edit-note-form">
+      <input type="hidden" value ="<%=factory.get("id")%>" 
+        name="note[factory_id]">
+      <input type="textarea" name="note[content]" data-id="note"
+        value= "<%= myNote %>" >  
+	  <input type="submit" class="<%= buttonClass %> btn" value=Save Note
+		     data-dismiss="modal" aria-hidden="true" data-id="<%= factory.get("id")%>">
+	</form>
+
+
+  </div>
+  <div class="modal-footer">
+
+    <% if (factory.notes().escape("content")) { %>
+        <button class="delete-note btn" data-id="<%= factory.get("id") %>" data-dismiss="modal" aria-hidden="true">
+          Delete Note</button>
+    <% } %>
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
   </div>
 </div>

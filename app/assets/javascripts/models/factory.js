@@ -13,6 +13,10 @@ SourceAndSew.Models.Factory = Backbone.Model.extend ({
 		this._factoryNotes.set({content: undefined});	
 	},
 	
+	updateNotes: function (myString){
+	  this._factoryNotes.set({content: myString});	
+	},
+	
 	favorite: function () {
 		var factory = this;
 		

@@ -3,7 +3,6 @@ class FavoritesController < ApplicationController
   def index
     @factories = current_user.favorited_factories.includes(:notes)
     @factories.each do |factory|
-      puts "#{factory}"
       factory.favorited = true
     end
     
@@ -26,7 +25,6 @@ class FavoritesController < ApplicationController
   end
   
   def create
-    puts params
     @favorite = Favorite.new(:user_id => current_user.id, 
         :factory_id => params[:factory_id])
     if @favorite.save

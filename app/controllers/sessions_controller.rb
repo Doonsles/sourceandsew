@@ -10,11 +10,7 @@ class SessionsController < ApplicationController
       render :new
     else
       self.current_user = user
-      if(self.current_user.favorites.length == 0)
-        redirect_to factories_url
-      else
-        redirect_to favorites_url
-      end
+      redirect_to factories_url
     end
   end
   

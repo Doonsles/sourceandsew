@@ -26,6 +26,9 @@ class NotesController < ApplicationController
   def create
     @note  = Note.new(params[:note].merge({:user_id => current_user.id}))
     if @note.save
+      p "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      p "the note to json is now"
+      p @note.to_json
       render :json => @note
     else
       flash.now[:errors] = @note.errors.full_messages

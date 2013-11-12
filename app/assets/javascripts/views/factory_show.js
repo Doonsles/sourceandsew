@@ -20,8 +20,8 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	},
 	
 	events: {
-	  "submit .create-note": "createNote",
-	  "submit .edit-note" : "editNote",
+	  "click .create-note": "createNote",
+	  "click .edit-note" : "editNote",
 	  "click .delete-note" : "deleteNote",
 	  "mouseenter .factory-image" : "popUpHeart",
 	  "mouseleave .factory-image" : "removeHeart",
@@ -30,10 +30,18 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	
 	createNote: function (event){
 		event.preventDefault();
-		serialized = $(event.target).serializeJSON();
-		var note = new SourceAndSew.Models.Note(serialized.note);
-      
-		note.save({}, {});
+		serialized = $(event.target.form).serializeJSON();
+		//var note = new SourceAndSew.Models.Note(serialized.note);
+		
+		//render the factory inside the save method
+		var that = this;
+		var factory = this.model;
+		this.model.notes().save(serialized, {
+		  success: function (){
+			  factory.updateNotes(serialized.note.content);
+			  that.render();
+		  }
+		});
 		
 		$(event.currentTarget).children(":submit").removeClass("create-note");
 		$(event.currentTarget).children(":submit").addClass("edit-note");
@@ -43,10 +51,21 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	editNote: function (event){
 	  event.preventDefault();
 	  
-	  var NoteToEdit = SourceAndSew.factories.get($(event.target).data("id")).notes();
+	  var factory = SourceAndSew.factories.get($(event.target).data("id"));
+	  var NoteToEdit = factory.notes();
 	  
-	  var serialized = $(event.currentTarget).serializeJSON();
-	  NoteToEdit.save(serialized);
+	  var serialized = $(event.target.form).serializeJSON();
+	  //NoteToEdit.save(serialized);
+	  
+	  //render the factory inside the save method
+	  var that = this;
+	  NoteToEdit.save(serialized, {
+	  		  success: function (){
+				  factory.updateNotes(serialized.note.content);
+	  			  that.render();
+	  		  }
+	  });
+	  
 	},
 	
 	deleteNote: function(event){		
