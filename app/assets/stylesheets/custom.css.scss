@@ -161,14 +161,19 @@ padding-top: 0;
 .spinner {
 	position: absolute;
 	left: 3px;
-//	color: #E70024;
 }
 
 .twitter-share-button {
 	position: relative;
 	float: right;
-	top: 430px;
-//	display: block;
+	top: 435px;
+}
+
+.fb-like {
+	position: relative;
+	float: right;
+	top: 435px;
+	right: -180px;
 }
 
 
