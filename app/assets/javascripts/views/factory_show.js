@@ -93,7 +93,6 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	clickHeart: function(event){
     $(event.target).hide();
     $(event.target).parent().find(".spinner").show();
-    $(event.target).fadeIn(300);
     
 		this.model.favorite();	
 	},
