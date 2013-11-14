@@ -83,16 +83,18 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	popUpIcons: function (event){
 		event.preventDefault();
 		$(event.currentTarget).children(".heart").fadeIn(200);
-		$(event.currentTarget).children("a").find("img").fadeIn(200);
 	},
 	
 	removeIcons: function (event){
 		event.preventDefault();
 		$(event.currentTarget).children(".heart").fadeOut(300);
-		$(event.currentTarget).children("a").find("img").fadeOut(300);
 	},
 	
 	clickHeart: function(event){
+    $(event.target).hide();
+    $(event.target).parent().find(".spinner").show();
+    $(event.target).fadeIn(300);
+    
 		this.model.favorite();	
 	},
 	

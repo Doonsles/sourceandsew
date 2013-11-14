@@ -12,41 +12,45 @@ f1 = Factory.create({:phone => "123-456-7890",  :description => "We manufacture 
 f1.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/scissors.png")
 f1.save!
 
-f2 = Factory.create({:phone => "234-567-8901",  :description => "Bringing color to life...with an attitude", 
-    :location => "Commerce, CA", :name => "Cotton Heritage"})
-f2.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/sewing-machine-thread.png")
-f2.save!
+f15 = Factory.create({:phone => "567-890-1234",  :description => "Manufacturer of specialty knits, wovens and jacquards!", 
+        :location => "Haw River, NC", :name => "Interstate Narrow Fabrics"})
+f15.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-4.png")
+f15.save!
 
-f25 = Factory.create({:phone => "567-890-1234",  :description => "Leather for the apparel, handbags, and footwear", 
+f25 = Factory.create({:phone => "567-890-1234",  :description => "Leather for apparel, handbags, and footwear", 
         :location => "New York, NY", :name => "EDSI leather"})
 f25.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-sandal-3.png")
 f25.save!    
     
-f3 = Factory.create({:phone => "345-678-9012",  :description => "Cut & Sew | Embroidery", 
-      :location => "Linden, NJ", :name => "Stylus Apparel"})
-f3.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/man-ironing.png")
-f3.save!
-
-f4 = Factory.create({:phone => "456-789-0123",  :description => "We make t-shirts AWESOME!", 
-        :location => "San Marcos, CA", :name => "Lifework"})
-f4.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-3.png")
-f4.save!
+f16 = Factory.create({:phone => "678-901-2345",  :description => "Immediates, Textile Short-Run Production", 
+        :location => "Raleigh, NC", :name => "Li Sashay"})
+f16.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-3.png")
+f16.save!
 
 f5 = Factory.create({:phone => "456-789-0123",  :description => "America wears Jensen", 
         :location => "Portsmouth, VA", :name => "Jensen Apparel"})
 f5.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-8.png")
 f5.save!
 
-
 f8 = Factory.create({:phone => "789-012-3456",  :description => "Quality. Guaranteed.", 
         :location => "East Providence, RI", :name => "Turfer"})
 f8.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-4.png")
 f8.save!
 
+f23 = Factory.create({:phone => "234-567-8901",  :description => "Quality People, Quality Products", 
+        :location => "Mendota Heights, MN", :name => "Minnesota Knitting Mills, Inc."})
+f23.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-seedstitch-2.png")
+f23.save!
+
 f9 = Factory.create({:phone => "890-123-4567",  :description => "New York City-based apparel manufacturer.", 
         :location => "New York, NY", :name => "Emma New York"})
 f9.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-2.png")
 f9.save!
+
+f3 = Factory.create({:phone => "345-678-9012",  :description => "Cut & Sew | Embroidery", 
+      :location => "Linden, NJ", :name => "Stylus Apparel"})
+f3.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/man-ironing.png")
+f3.save!
 
 f10 = Factory.create({:phone => "901-234-567",  :description => "samples, sourcing, and production starting at 100 units", 
         :location => "San Francisco, CA", :name => "S.J. Private Label"})
@@ -72,16 +76,6 @@ f14 = Factory.create({:phone => "456-789-0123",  :description => "Irish Linen",
         :location => "Mineola, NY", :name => "Ulster Weavers/ Moygashel"})
 f14.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-7.png")
 f14.save!
-
-f15 = Factory.create({:phone => "567-890-1234",  :description => "Manufacturer of specialty knits, wovens and jacquards!", 
-        :location => "Haw River, NC", :name => "Interstate Narrow Fabrics"})
-f15.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-4.png")
-f15.save!
-
-f16 = Factory.create({:phone => "678-901-2345",  :description => "Immediates, Textile Short-Run Production", 
-        :location => "Raleigh, NC", :name => "Li Sashay"})
-f16.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-3.png")
-f16.save!
 
 f7 = Factory.create({:phone => "678-901-2345",  :description => "Divine Apparel, Inc.", 
         :location => "New York, NY", :name => "Divine Apparel, Inc."})
@@ -123,11 +117,6 @@ f22 = Factory.create({:phone => "123-456-7890",  :description => "Specializing i
 f22.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-seedstitch-4.png")
 f22.save!
 
-f23 = Factory.create({:phone => "234-567-8901",  :description => "Quality People, Quality Products", 
-        :location => "Mendota Heights, MN", :name => "Minnesota Knitting Mills, Inc."})
-f23.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-seedstitch-2.png")
-f23.save!
-
 f24 = Factory.create({:phone => "345-678-9012",  :description => "For over 80 years, Artex has been manufacturing in the USA.", 
         :location => "Westville, NJ", :name => "Artex Knitting Mills"})
 f24.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-seedstitch-1.png")
@@ -138,11 +127,20 @@ f25 = Factory.create({:phone => "456-789-0123",  :description => "Custom leather
 f25.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-sandal.png")
 f25.save!
 
-
 f26 = Factory.create({:phone => "678-901-2345",  :description => "If you can imagine it, T.O. Dey can build it!", 
         :location => "New York, NY", :name => "T.O. Dey Shoes"})
 f26.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-sandal-2.png")
 f26.save!
+
+f2 = Factory.create({:phone => "234-567-8901",  :description => "Bringing color to life...with an attitude", 
+    :location => "Commerce, CA", :name => "Cotton Heritage"})
+f2.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/sewing-machine-thread.png")
+f2.save!
+
+f4 = Factory.create({:phone => "456-789-0123",  :description => "We make t-shirts AWESOME!", 
+        :location => "San Marcos, CA", :name => "Lifework"})
+f4.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-tee-3.png")
+f4.save!
 
 
 User.create({:username => "guest", :password => "password"}) #has two favorites
