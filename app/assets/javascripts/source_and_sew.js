@@ -5,12 +5,14 @@ window.SourceAndSew = {
   Routers: {},
   initialize: function() {
 	SourceAndSew.factories = new SourceAndSew.Collections.Factories();
-
+	
 	SourceAndSew.factories.fetch({
 		error: function (args) {
 			console.log(args);
 		},
 	    success: function (){
+	       new SourceAndSew.AppRouter();
+	       Backbone.history.start();
 		   runJavaScript();
 	  }	
 	});

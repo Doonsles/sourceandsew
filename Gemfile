@@ -34,6 +34,7 @@ gem "figaro"
 gem "paperclip"
 gem "aws-sdk"
 gem 'font-awesome-sass'
+gem 'kaminari'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -48,4 +49,4 @@ gem 'font-awesome-sass'
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'

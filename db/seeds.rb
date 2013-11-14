@@ -15,7 +15,12 @@ f1.save!
 f2 = Factory.create({:phone => "234-567-8901",  :description => "Bringing color to life...with an attitude", 
     :location => "Commerce, CA", :name => "Cotton Heritage"})
 f2.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/sewing-machine-thread.png")
-f2.save!    
+f2.save!
+
+f25 = Factory.create({:phone => "567-890-1234",  :description => "Leather for the apparel, handbags, and footwear", 
+        :location => "New York, NY", :name => "EDSI leather"})
+f25.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-sandal-3.png")
+f25.save!    
     
 f3 = Factory.create({:phone => "345-678-9012",  :description => "Cut & Sew | Embroidery", 
       :location => "Linden, NJ", :name => "Stylus Apparel"})
@@ -112,6 +117,32 @@ f19 = Factory.create({:phone => "901-234-5678",  :description => "Garment Dyeing
         :location => "Commerce, CA", :name => "Los Angeles Dye & Wash Company"})
 f19.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-silk-10.png")
 f19.save!
+
+f22 = Factory.create({:phone => "123-456-7890",  :description => "Specializing in knitting high pile, jersey, napped fleece, and terry cloth ", 
+        :location => "Canton, MA", :name => "Draper Knitting"})
+f22.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-seedstitch-4.png")
+f22.save!
+
+f23 = Factory.create({:phone => "234-567-8901",  :description => "Quality People, Quality Products", 
+        :location => "Mendota Heights, MN", :name => "Minnesota Knitting Mills, Inc."})
+f23.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-seedstitch-2.png")
+f23.save!
+
+f24 = Factory.create({:phone => "345-678-9012",  :description => "For over 80 years, Artex has been manufacturing in the USA.", 
+        :location => "Westville, NJ", :name => "Artex Knitting Mills"})
+f24.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-seedstitch-1.png")
+f24.save!
+
+f25 = Factory.create({:phone => "456-789-0123",  :description => "Custom leather craft.", 
+        :location => "New York, NY", :name => "A.B.K. / Alya B."})
+f25.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-sandal.png")
+f25.save!
+
+
+f26 = Factory.create({:phone => "678-901-2345",  :description => "If you can imagine it, T.O. Dey can build it!", 
+        :location => "New York, NY", :name => "T.O. Dey Shoes"})
+f26.photo = URI.parse("https://s3-us-west-2.amazonaws.com/sourceandsew/everlane-sandal-2.png")
+f26.save!
 
 
 User.create({:username => "guest", :password => "password"}) #has two favorites

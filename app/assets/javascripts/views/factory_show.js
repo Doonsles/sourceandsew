@@ -11,10 +11,6 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 		  factory: this.model,	
 		});
 		
-  	    // $(".factory-list").click(function() {
-  	    //   alert("you clicked!")
-  	    // });
-		
 		this.$el.html(renderedContent);
 		return this;
 	},
@@ -23,15 +19,15 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	  "click .create-note": "createNote",
 	  "click .edit-note" : "editNote",
 	  "click .delete-note" : "deleteNote",
-	  "mouseenter .factory-image" : "popUpHeart",
-	  "mouseleave .factory-image" : "removeHeart",
-	  "click .heart" : "clickHeart"
+	  "mouseenter .factory-image" : "popUpIcons",
+	  "mouseleave .factory-image" : "removeIcons",
+	  "click .heart" : "clickHeart",
+	  "click .opaque-heart" : "clickUnheart"
 	},
 	
 	createNote: function (event){
 		event.preventDefault();
 		serialized = $(event.target.form).serializeJSON();
-		//var note = new SourceAndSew.Models.Note(serialized.note);
 		
 		//render the factory inside the save method
 		var that = this;
@@ -84,21 +80,23 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	  
 	},
 	
-	popUpHeart: function (event){
+	popUpIcons: function (event){
 		event.preventDefault();
 		$(event.currentTarget).children(".heart").fadeIn(200);
+		$(event.currentTarget).children("a").find("img").fadeIn(200);
 	},
 	
-	removeHeart: function (event){
+	removeIcons: function (event){
 		event.preventDefault();
 		$(event.currentTarget).children(".heart").fadeOut(300);
+		$(event.currentTarget).children("a").find("img").fadeOut(300);
 	},
 	
 	clickHeart: function(event){
-		if(this.model.get("favorited")){ 
-			this.model.unfavorite();
-	    } else {
-		  this.model.favorite();
-		}	
+		this.model.favorite();	
+	},
+	
+	clickUnheart: function(event){
+		this.model.unfavorite();
 	}
 });

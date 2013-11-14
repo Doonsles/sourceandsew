@@ -131,7 +131,19 @@ padding-top: 0;
 	position: absolute;
     left: 0;
 	opacity: 1;
+	cursor: pointer;
 }
+
+.pencil-image {
+  position: absolute;
+  top: 165px;
+  right: 50px;
+  opacity: 0.5;
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
 
 /* thumbnails */
 .factory-thumbnail {
