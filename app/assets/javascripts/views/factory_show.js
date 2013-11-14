@@ -100,6 +100,7 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	clickUnheart: function(event){
     $(event.target).hide();
     $(event.target).parent().find(".spinner").show();
+    debugger;
 		this.model.unfavorite();
 	}
 });
