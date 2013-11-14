@@ -51,9 +51,7 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	  var NoteToEdit = factory.notes();
 	  
 	  var serialized = $(event.target.form).serializeJSON();
-	  //NoteToEdit.save(serialized);
-	  
-	  //render the factory inside the save method
+
 	  var that = this;
 	  NoteToEdit.save(serialized, {
 	  		  success: function (){
@@ -100,7 +98,7 @@ SourceAndSew.Views.FactoryShow = Backbone.View.extend({
 	clickUnheart: function(event){
     $(event.target).hide();
     $(event.target).parent().find(".spinner").show();
-    debugger;
+
 		this.model.unfavorite();
 	}
 });

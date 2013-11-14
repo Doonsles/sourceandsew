@@ -10,7 +10,6 @@ class FavoritesController < ApplicationController
       format.html { render :index}
       format.json { render :json => @factories }
     end
-    # render :index
   end
   
   def create
@@ -25,14 +24,9 @@ class FavoritesController < ApplicationController
   end
   
   def destroy
+    sleep(0.25)
     @favorite = Favorite.find_by_factory_id_and_user_id(params[:factory_id], current_user.id)
     @favorite.destroy
     head :ok
-    
-    # @favorite = Favorite.find(params[:id])
-    # 
-    # @favorite.destroy
-    # redirect_to factories_url
-  end
-  
+  end  
 end

@@ -27,6 +27,10 @@ SourceAndSew.Views.FactoriesIndex = Backbone.View.extend({
 
 		prevURL = "/factories#/" + (myPage - 1).toString();	
 		nextURL = "/factories#/" + (myPage + 1).toString();
+    
+    pagination = "page " + myPage.toString() + " of 5"
+    
+    this.$el.find(".page-nums").html(pagination);
 		
 		if(myPage > 1){
 		  this.$el.find(".prev").attr("href", prevURL);

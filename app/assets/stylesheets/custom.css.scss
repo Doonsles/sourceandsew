@@ -59,7 +59,6 @@ p {
 
 
 /* button */
-
 .button {
     border-radius: 5px;
 }
@@ -163,16 +162,25 @@ padding-top: 0;
 	left: 3px;
 }
 
+/* social media */
 .twitter-share-button {
 	position: relative;
 	float: left;
-	top: 435px;
+	top: 445px;
 }
 
 .fb-like {
 	position: relative;
 	float: left;
-	top: 435px;
+	top: 445px;
 }
 
+.page-nums {
+	position:relative;
+//	left: 327px;
+//	top: 43px;
+	left: 446px;
+	top: 9px;
+	color: #00608b;
+}
 
