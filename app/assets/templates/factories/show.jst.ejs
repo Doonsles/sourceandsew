@@ -25,10 +25,10 @@
 	  
 	  <% if (factory.notes().escape("content")) {%>
 	      <% var myNote = factory.notes().escape("content"); %>
-	  	<% var buttonVal = "edit your personal note" %>
+	  	<% var buttonVal = "Edit your personal note" %>
 	  	<% var buttonClass = "edit-note"%>
 	  <% } else { %>
-	      <% var buttonVal = "create a personal note" %>
+	      <% var buttonVal = "Create a personal note" %>
 	  	<% var buttonClass = "create-note" %>
 	  <% } %>
 	  <!-- Button to trigger note modal -->
@@ -72,6 +72,7 @@
 	  class="edit-note-form">
       <input type="hidden" value ="<%=factory.get("id")%>" 
         name="note[factory_id]">
+    
       <input type="textarea" name="note[content]" data-id="note"
         value= "<%= myNote %>" >  
 	  <input type="submit" class="<%= buttonClass %> btn" value=Save Note

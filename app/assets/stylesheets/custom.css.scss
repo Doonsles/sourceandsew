@@ -85,13 +85,13 @@ p {
 
 
 /* welcome message */
-.nav .sign-in-or-welcome{
+.nav .welcome{
+  position: relative;
 	color: #00608b;
-	float: left;
-	//padding-top: 10px;
 	padding-top: 30px;
 	font-family: "Trebuchet MS", "Lucida Grande", "Lucida Sans", Tahoma, sans-serif;
-    font-size: 1.5em; 
+  right: 17px;
+  font-size: 1.5em; 
 }
 
 .nav .nav-links{
@@ -102,7 +102,7 @@ p {
 
 /* modal */
 .sign-in-modal {
-    width: 250px;
+  width: 250px;
 	margin-left: -120px;
 }
 
@@ -177,10 +177,11 @@ padding-top: 0;
 
 .page-nums {
 	position:relative;
-//	left: 327px;
-//	top: 43px;
 	left: 446px;
 	top: 9px;
 	color: #00608b;
 }
 
+.nothing-to-display {
+  color: #00608b;
+}

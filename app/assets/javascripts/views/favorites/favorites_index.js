@@ -14,6 +14,10 @@ SourceAndSew.Views.FavoritesIndex = Backbone.View.extend({
 	  this.$el.html(renderedContent);
 	  
 	  var $container = this.$el.find("#favorites-index");
+    
+    if(this.collection.length === 0){
+      this.$el.find(".nothing-to-display").html('You have no favorites selected. <a href="/factories">Make some</a> by visiting the factories page and clicking on the heart icon.');
+    }
 	  
 	  this.collection.each (function (factory) {
 		  if (factory.get("favorited")) {

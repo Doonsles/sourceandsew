@@ -45,7 +45,7 @@
 				<li class="nav-links"> <a href="#signInModal" role="button" data-toggle="modal">Sign In</a> </li>
 	
 	  	        <% else %>
-		        <li class="sign-in-or-welcome"> Welcome, <%= current_user.username %> </li>
+		        <li class="welcome"> Welcome, <%= current_user.username %> </li>
 				<li class="nav-links"> <%= link_to "View All Factories", factories_url, :method => :get%></li>
 				<li class="nav-links"> <%= link_to "View Favorites", favorites_url, :method => :get %> </li>
 		        <li class="nav-links"> <%= link_to "View Notes", notes_url, :method => :get%></li>
