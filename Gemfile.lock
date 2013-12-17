@@ -59,14 +59,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
-    columnize (0.3.6)
     debug_inspector (0.0.2)
-    debugger (1.6.1)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.2.3)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.2.3)
     eco (1.0.0)
       coffee-script
       eco-source
@@ -161,7 +154,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (= 2.3.2.0)
   coffee-rails (~> 3.2.1)
-  debugger
   figaro
   font-awesome-sass
   jquery-rails
