@@ -73,7 +73,7 @@ p {
 }
 
 .carousel {
-	position: absolute;
+	position: relative;
 	left: 0;
 	right: 0;
 //	top: 0;
@@ -164,15 +164,13 @@ padding-top: 0;
 
 /* social media */
 .twitter-share-button {
-	position: relative;
-	float: left;
-	top: 445px;
+  position: relative;
+  float: left;
 }
 
 .fb-like {
-	position: relative;
-	float: left;
-	top: 445px;
+  position: relative;
+  float: left;
 }
 
 .page-nums {
@@ -182,6 +180,14 @@ padding-top: 0;
 	color: #00608b;
 }
 
+.image-source {
+  position: absolute;
+  float: left;
+  margin-top: -25px;
+  margin-left: 665px;
+}
+
 .nothing-to-display {
   color: #00608b;
 }
+
